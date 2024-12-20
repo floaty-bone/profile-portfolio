@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Engineering Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1a237e;
+            --secondary: #0d47a1;
+            --accent: #2962ff;
+            --text: #333;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light-bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .project {
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h2 {
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+            color: var(--white);
+            padding: 20px;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .section {
+            padding: 25px;
+        }
+
+        .section h3 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section h3::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 25px;
+            background: var(--accent);
+            margin-right: 15px;
+            border-radius: 3px;
+        }
+
+        .section p {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+		.image-caption {
+            text-align: center;
+            color: #666;
+            font-size: 0.3rem;
+            margin-top: 10px;
+            font-style: italic;
+            padding: 0 15px;
+        }
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .stat-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item .value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .stat-item .label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 20px;
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .container {
+                margin-top: -30px;
+            }
+
+            .project h2 {
+                font-size: 1.3rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .project-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+        <p>Ce portfolio rassemble mes projets de stage ainsi que des études personnelles que j'ai menées pour 
+			développer mes compétences.</p>
+    </header>
+
+    <div class="container">
+        <div class="project">
+            <h2>Projet 1: General Electric Vernova</h2>
+            
+            <div class="section">
+                <h3>Objectif</h3>
+                <p>Concevoir (partie mécanique et software) une station de mesure de raideur des couronnes do doigt des nouvelles séries de disjoncteurs live tank, cette station à pour objectif de s’assurer de la conformité des couronnes de doigt après leur montage dans le carter.</p>
+
+            </div>
+            
+            <div class="section">
+                <h3>Execution</h3>
+                <p>Ma responsabilité consiste à élaborer la station dans sa globalité, tant au niveau mécanique que logiciel. J'ai 
+					commencé par définir les besoins avec les différentes parties prenantes (service qualité, opérateurs, bureau 
+					d'études). Ces besoins ont été traduits en exigences au niveau système, puis décomposés en exigences au 
+					niveau des sous-systèmes jusqu'à arriver aux exigences des composants (conception descendante). Une 
+					fois les exigences au niveau des composants définies, j'ai entamé la phase de conception tout en travaillant 
+					parallèlement avec mon tuteur à l'identification des simulations nécessaires pour valider les exigences de 
+					précision des mesures. Après la validation des dimensions, j'ai réalisé la mise en plan, qui a ensuite été 
+					envoyée au service des achats. la partie logiciel a été faite en parallèle, j’ai développé une interface 
+					graphique pour la visualisation de donnés et le pilotage du détecteur d’effort et je l’ai synchronisé avec la 
+					base de donnés du site pour l’enregistrement des donnés.</p>
+				<div>
+                	<img src="/images/1.png" alt="Assembly Line System" class="project-image">
+                    <img src="/images/4.png" alt="Assembly Line System" class="project-image" style="width: 500px; height: 200px; object-fit: cover;">
+					<p class="image-caption">Figure 1: Conception CAO de la station</p>
+				</div>
+				<div>
+                	<img src="/images/3.png" alt="Assembly Line System" class="project-image">
+					<p class="image-caption">Figure 2: interface graphique , Data aquisition software</p>
+                </div>
+            </div>
+            <div class="section">
+                <h3>Objectif</h3>
+                <p>Dimensionnement d’arbre de transmission de puissance qui a été redésigné, pour l’ouverture des 
+                    disjoncteur GCB (Ground circuit breaker) l’ancien système étant couteux et sensible aux défauts de 
+                    coaxialisé.</p>
+
+            </div>
+            
+            <div class="section">
+                <h3>Execution</h3>
+                <p>J’ai dimensionné un nouveau design d’arbre. J’ai commencé par simuler les différentes propositions qui ont 
+                    été faites par un collègue. J’itérait les différents dimension et apportait des modification mineurs de 
+                    dimension afin d’arriver sur le facteur de sécurité demandé sans le dépasser. Le re-design visait à simplifier 
+                    des usinages et de surtout diminuer le matériau, ce qui coutait cher à l’entreprise</p>
+				<div>
+                	<img src="/images/5.png" alt="Assembly Line System" class="project-image">
+                    <img src="/images/6.png" alt="Assembly Line System" class="project-image" >
+					<p class="image-caption">Figure 3: Notes de calcul</p>
+				</div>
+            </div>
+            <div class="section">
+                <h3>Objectif</h3>
+                <p>Déterminer la contrainte mécanique dans la chambre à gaz due à la pression de gaz sf6. Qui a été augmenté 
+                    afin d’augmenter la durée de vie des tulipes. On cherche à s’assurer qu’on reste toujours au-dessus d’un 
+                    facteur de sécurité de 5 selon (CDC 912625/CODAP)</p>
+
+            </div>
+            
+            <div class="section">
+                <h3>Execution</h3>
+                <p>la contrainte à été appliqué au parois intérieurs afin de simuler une pression statique de p=1.6MPA, 
+                    matériaux : A-S7G03. </p>
+				<div>
+                	<img src="/images/7.png" alt="Assembly Line System" class="project-image">
+                    <img src="/images/8.png" alt="Assembly Line System" class="project-image" >
+					<p class="image-caption">Figure 4: Notes de calcul</p>
+				</div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Projet 2: Etude personnelle</h2>
+            <div class="section">
+                <h3>Contexte</h3>
+                <p>Pendant leur fonctionnement, les moteurs à fusée en particulier la chambre de combustion du moteur subit 
+                    des température très grande. Avec l’augmentation de la température, les propriétés mécaniques des 
+                    métaux se dégradent, notamment leur limite d’élasticité. Pour remédier à ce problème, il existe deux 
+                    méthodes qui permettent de contrôler la température de la chambre. La première : refroidissement ablatif, 
+                    consiste en la désintégration des parois intérieures de la chambre, emportant avec elle une partie de la 
+                    chaleur. Toutefois, cette méthode est destructrice et suppose que le moteur ne sera pas réutilisé. La 
+                    deuxième méthode, et la plus couramment utilisée, est le refroidissement régénératif. Elle s’effectue par le 
+                    passage d’un fluide cryogénique à travers des canaux gravés à l’intérieur de la chambre de combustion, 
+                    permettant une dissipation efficace de la chaleur.</p>
+            </div>
+            
+            <div class="section">
+                <h3>But de l'étude</h3>
+                <p>Le but est d'évaluer  l’effet de la variation de la largeur L et Hauteur H des canaux de refroidissement rectilignes  sur la 
+                    température maximale du mur intérieur de la chambre de combustion, on cherchera également à trouver un 
+                    optimum , avec comme fonction objective la température maximale du mur intérieur de la chambre de 
+                    combustion,  et variable d’optimisation : L, H , avec L entre 0.8 et 3.0mm,  H entre  1.5 à 5.0mm, l’épaisseur 
+                    du mur est  gardée constante à 10mm la distance entre le canal et la paroi intérieur est gardée constante à 
+                    3mm </p>
+                <img src="/images/9.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption">Figure 1: Conception des canaux de refroidissement (CAO assemblage chambre de combustion + tuyère)</p>
+                <img src="/images/10.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption">Figure 2: Paramètres de l’étude</p>
+            </div>
+            <div class="section">
+                <h3>Execution</h3>
+                <p>Au début, on commence avec une épaisseur de mur intérieur ,une largeur de canaux de refroidissement  et 
+                    une hauteur  de 1 mm, 1.8 mm, and 3.5 mm, respectivement.  
+                    On effectue le maillage avec une inflation au niveau de la couche limite de la chambre de combustion afin de 
+                    capturer le gradient de température et de vitesse au niveau de la couche limite idem pour les canaux de 
+                    refroidissement , un maillage de la partie solide à également été fait </p>
+                <img src="/images/11.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption">Figure3 : Maillage zone fluide + solide</p>
+                <p>Après simulation sur ansys fluent+ ansys thermal   on obtient les résultats suivants :</p>
+                <img src="/images/12.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption"> Figure 4 : donnés thermiques du gaz dans la chambre de combustion sur quelques sections</p>
+                <img src="/images/13.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption">Figure 5 : Distribution de température dans le mur de la chambre de combustion, coupe effectuée entre 2 canaux</p>
+                <p>Le pic de température est atteint juste avant la section la plus étroite, à proximité de la zone de contraction 
+                    du col de la chambre de combustion. 
+                    Après variation des paramètre L-H en incréments de 0,01mm et entre 1.5 à 5.0mm pour la hauteur et 0.8 à 
+                    3.0mm pour la largeur  On obtient: </p>
+                <img src="/images/14.png" alt="Assembly Line System" class="project-image">
+                <p class="image-caption">Figure6 : Température maximale de la chambre de combustion en fonction de L et H                 </p>
+            </div>
+            <div class="section">
+                <h3>Conclusion</h3>
+                <p>L’optimum est à H=5mm  et  L=0.8mm, avec une température minimale de 586.6 K</p>
+                <p>Mon interprétation : Lorsque la largeur des canaux est augmentée, le fluide de refroidissement absorbe une 
+                    grande quantité de chaleur à l'entrée de la chambre de combustion, en raison de la surface d'échange 
+                    importante, là où son effet n'est pas pleinement nécessaire. En atteignant le col de la chambre de 
+                    combustion, où la température est la plus élevée, le fluide de refroidissement a déjà une température 
+                    importante, ce qui réduit son efficacité à absorber rapidement la chaleur. Réduire la largeur tout en 
+                    augmentant la hauteur permet de conserver un flux massique constant et de retarder l'absorption de chaleur 
+                    jusqu’au col, là où elle est le plus nécessaire. </p>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Mini étude personnelle</h2>
+            
+            <div class="section">
+                <p>Étant un grand fan du projet de la fusée Starship mené par SpaceX, je suis de près, depuis 2019, le 
+                    développement en détail. Une des grandes phases de ce développement est le test sous pression des 
+                    réservoirs de LOX (oxygène liquide) et de méthane. Le but est de remplir le réservoir d’azote liquide 
+                    cryogénique et d’augmenter la pression dans le réservoir jusqu’à rupture afin d’analyser le mode de 
+                    défaillance. Anticipant ce test et ayant accès à un plan du réservoir publié par un employé sur internet, avec 
+                    les cotes et l’épaisseur de la tôle, j’ai reconçu le réservoir et exécuté une simulation de pression 
+                    hydrostatique pour tenter de prédire la zone de rupture ainsi que la pression critique en utilisant la méthode 
+                    des éléments finis. </p>
+                    <img src="/images/15.png" alt="Motion Control System" class="project-image">
+                    <p class="image-caption">Figure 1: comparaison entre simulation et résultat de tests</p>
+                    <p>Rupture réelle du réservoir : 7.6bar, rupture prédite : 8.1 bar ( probablement dû à la température qui étais 
+                        plus grande dans les vrais tests. Le limite de rupture d’acier inoxydable augmente plus la température est 
+                        basse)  -zone de rupture prédite par la zone rouge (plus grande contrainte). Dans le vrai test on a rupture exactement 
+                        dans la zone prédite par la méthode en éléments finies, la fin de l’arc et début de zone linéaire </p>
+                    <p>le fait de voir le test on live et de prédire exactement la zone de rupture était assez impressionnant</p>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
